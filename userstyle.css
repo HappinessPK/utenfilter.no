@@ -1,0 +1,74 @@
+@-moz-document url-prefix("https://www.utenfilter.no/") {
+/*Better Darkmode and minor tweaks for www.utenfilter.no
+
+Changes:
+Lightened background, all black didn't look that good.
+Added borders for better readability.
+The logo was all black on a black background and therefore not visible. I inverted the color to make it show.
+The social media buttons was barely visible on both light and dark mode. I made them more visible.
+Hovering choices in the sidemenu made them go invisible due to the text going black. I changed that so the whole bar changes color and the text stays the same instead.
+In the "Om oss" tab their "Vipps" donation image wasn't visible due to the text being black. Inverted the colors to make it readable, unfortunately the vipps orange color is now blue in darkmode due to this. This can only be change from their end with an alternative image for darkmode.
+*/
+:root{
+    --social-icon-color-light:#000
+    --social-icon-color-dark:#fff
+}
+/*Background*/
+.darkmode{
+    background:#111
+}
+
+/*Borders*/
+.darkmode .builder56__section {
+	border: 0 solid var(--darkmode-border-color);
+    border-width: 0 0 1px;
+}
+.darkmode .blog56--list .post56__sep__line {
+    border-style: solid;
+	border-color: var(--darkmode-border-color) !important;
+	border-width: 0 0 1px;
+}
+.blog56--list .post56__sep__line {
+    border-style: solid;
+	border-width: 0 0 1px;
+}
+.darkmode .widget_recent_entries ul li + li{
+	border-color: var(--darkmode-border-color);
+}
+
+/*Logo*/
+
+.darkmode .header_desktop56 .logo56 img {
+	filter: invert(1);
+}
+
+/*Socials*/
+
+.darkmode .header56__social a {
+	color: var(--social-icon-color-dark);
+}
+.header56__social a {
+	color: var(--social-icon-color-light);
+}
+.darkmode .header56__social a:hover {
+	background: #fff;
+    border-color: #000;
+    color: #000;
+}
+.header56__social a:hover {
+	background: #000;
+}
+
+/*Side Menu*/
+
+.darkmode .offcanvasnav56 a:hover {
+	background: #111;
+    color: #fff
+}
+
+/*Vipps*/
+
+.darkmode .wp-block-image img {
+	filter: invert(1);
+}
+}
